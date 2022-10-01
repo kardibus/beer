@@ -1,4 +1,4 @@
-package com.kardibus.beer
+package com.kardibus.beer.model
 
 import java.util.*
 

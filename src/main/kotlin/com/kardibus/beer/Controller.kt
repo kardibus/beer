@@ -1,18 +1,20 @@
 package com.kardibus.beer
 
+import com.kardibus.beer.model.DateModel
+import com.kardibus.beer.model.StateModel
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class Controller(var stateModel: StateModel) {
+class Controller(private var beerService: BeerService) {
 
     @GetMapping
     fun getState(): StateModel {
-        return stateModel
+        return beerService.state()
     }
 
     @GetMapping("/test")
-    fun getTest(): String {
-        return "Hello World"
+    fun getTest(): DateModel {
+        return beerService.time()
     }
 }
