@@ -10,4 +10,9 @@ class Controller(var stateModel: StateModel) {
     fun getState(): StateModel {
         return stateModel
     }
+
+    @GetMapping("/test")
+    fun getTest(): String {
+        return "Hello World"
+    }
 }
