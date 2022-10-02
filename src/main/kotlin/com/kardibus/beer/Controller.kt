@@ -1,5 +1,6 @@
 package com.kardibus.beer
 
+import com.kardibus.beer.model.Beer
 import com.kardibus.beer.model.DateModel
 import com.kardibus.beer.model.StateModel
 import com.kardibus.beer.model.WorkModel
@@ -16,7 +17,7 @@ class Controller(private var beerService: BeerService) {
     }
 
     @GetMapping("/test")
-    fun getWorkTime(): DateModel {
+    fun getWorkTime(): Beer {
         return beerService.calculateWorkTime()
     }
 

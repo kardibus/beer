@@ -1,5 +1,6 @@
 package com.kardibus.beer
 
+import com.kardibus.beer.model.Beer
 import com.kardibus.beer.model.DateModel
 import com.kardibus.beer.model.StateModel
 import com.kardibus.beer.model.WorkModel
@@ -13,7 +14,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
         return stateModel
     }
 
-    fun calculateWorkTime(): DateModel {
+    fun calculateWorkTime(): Beer {
         var timeNow = LocalDateTime.now().plusHours(5)
 
         var mapInt: Map<Int, Int> =
@@ -32,7 +33,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
             }
         }
 
-        return date
+        return Beer().apply { beer = date }
     }
 
     fun work():WorkModel{
