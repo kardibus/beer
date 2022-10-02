@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@CrossOrigin
 class Controller(private var beerService: BeerService) {
 
     @GetMapping
