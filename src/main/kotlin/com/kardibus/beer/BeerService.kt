@@ -28,7 +28,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
             step = dateModel.step.apply {
 
                 this.stream().map { a ->
-                    timeNow = timeNow.plus(mapInt.getValue(a.step).toLong())
+                    timeNow = timeNow.plus((mapInt.getValue(a.step).toLong())*60000)
                     a.dateTime = timeNow
                 }.toArray()
             }
