@@ -6,6 +6,7 @@ import com.kardibus.beer.model.StateModel
 import com.kardibus.beer.model.WorkModel
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
+import java.util.*
 
 @Service
 class BeerService(private var stateModel: StateModel, private var dateModel: DateModel) {
@@ -15,7 +16,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
     }
 
     fun calculateWorkTime(): Beer {
-        var timeNow = LocalDateTime.now().plusHours(5)
+        var timeNow = Calendar.getInstance().time.time
 
         var mapInt: Map<Int, Int> =
             stateModel.step.associateBy({ it.step }, { it.time })
@@ -27,7 +28,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
             step = dateModel.step.apply {
 
                 this.stream().map { a ->
-                    timeNow = timeNow.plusMinutes(mapInt.getValue(a.step).toLong())
+                    timeNow = timeNow.plus(mapInt.getValue(a.step).toLong())
                     a.dateTime = timeNow
                 }.toArray()
             }

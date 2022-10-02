@@ -44,19 +44,19 @@ class Config {
             step = listOf(
                 DateModel.Time().apply {
                     step = 1
-                    dateTime = LocalDateTime.now()
+                    dateTime = 0
                 },
                 DateModel.Time().apply {
                     step = 2
-                    dateTime = LocalDateTime.now()
+                    dateTime = 0
                 },
                 DateModel.Time().apply {
                     step = 3
-                    dateTime = LocalDateTime.now()
+                    dateTime = 0
                 },
                 DateModel.Time().apply {
                     step = 4
-                    dateTime = LocalDateTime.now()
+                    dateTime = 0
                 })
         }
 

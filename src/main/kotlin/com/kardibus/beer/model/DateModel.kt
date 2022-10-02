@@ -1,6 +1,5 @@
 package com.kardibus.beer.model
 
-import java.time.LocalDateTime
 import java.util.*
 
 class DateModel {
@@ -10,6 +9,6 @@ class DateModel {
 
     class Time {
         var step: Int = 0
-        lateinit var dateTime: LocalDateTime
+        var dateTime: Long = 0
     }
 }
