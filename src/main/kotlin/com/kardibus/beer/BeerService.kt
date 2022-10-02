@@ -14,7 +14,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
     }
 
     fun calculateWorkTime(): DateModel {
-        var timeNow = LocalDateTime.now()
+        var timeNow = LocalDateTime.now().plusHours(5)
 
         var mapInt: Map<Int, Int> =
             stateModel.step.associateBy({ it.step }, { it.time })
