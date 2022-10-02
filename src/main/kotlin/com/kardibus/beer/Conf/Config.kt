@@ -4,7 +4,6 @@ import com.kardibus.beer.model.DateModel
 import com.kardibus.beer.model.StateModel
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
 
@@ -24,13 +23,21 @@ class Config {
                 StateModel.Step().apply {
                     step = 2
                     time = 10
+                },
+                StateModel.Step().apply {
+                    step = 3
+                    time = 5
+                },
+                StateModel.Step().apply {
+                    step = 4
+                    time = 15
                 })
         }
 
     }
 
     @Bean
-    fun dateModel(): DateModel {
+    fun dateModel(stateModel: StateModel): DateModel {
         return DateModel().apply {
             id = UUID.randomUUID()
             work = true
@@ -41,6 +48,14 @@ class Config {
                 },
                 DateModel.Time().apply {
                     step = 2
+                    dateTime = LocalDateTime.now()
+                },
+                DateModel.Time().apply {
+                    step = 3
+                    dateTime = LocalDateTime.now()
+                },
+                DateModel.Time().apply {
+                    step = 4
                     dateTime = LocalDateTime.now()
                 })
         }
