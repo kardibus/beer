@@ -33,7 +33,7 @@ class BeerService(private var stateModel: StateModel, private var dateModel: Dat
             }
         }
 
-        return Beer().apply { beer = date }
+        return Beer().apply { beer = listOf(date) }
     }
 
     fun work():WorkModel{
